@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css"
+		/>
+		<link rel="stylesheet" href="./index.css" />
+
+		<title>Portuguese Rhyming Dictionary</title>
+	</head>
+
+	<body>
+		<main>
+			<h1>Portuguese Rhyming Dictionary</h1>
+
+			<div id="rhyme-search-row">
+				<span>What rhymes with</span>
+				<input id="rhymes-with" type="text"/>
+				<span>?</span>
+			</div>
+
+			<ul id="definitions"></ul>
+
+			<div id="filters-row">
+				<select id="syllable-match-count">
+					<option value="ultimate_syllable">One syllable matches will do</option>
+					<option value="penultimate_syllable">Always match at least the final two syllables</option>
+					<option value="antepenultimate_syllable">Always match at least the final three syllables</option>
+				</select>
+
+				<label>
+					<span>Match stress?</span>
+					<input id="stress-checkbox" type="checkbox" />
+				</label>
+			</div>
+
+			<div>
+				<h2>Search among results</h2>
+				<div id="searchbox"></div>
+			</div>
+
+			<div id="hits" class="hidden"></div>
+			<div id="pagination"></div>
+		</main>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.2/dist/algoliasearch-lite.umd.js"
+			integrity="sha256-dImjLPUsG/6p3+i7gVKBiDM8EemJAhQ0VvkRK2pVsQY="
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4"></script>
+		<script src="./index.js"></script>
+	</body>
+</html>
