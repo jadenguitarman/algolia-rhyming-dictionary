@@ -9,7 +9,7 @@ let currentlyAppliedFilters = {};
 
 const getSearchWordData = async e => {
 	// Step 1: get a reference to the index that contains our word data.
-	const index = searchClient.initIndex('rhyme-dictionary');
+	const index = searchClient.initIndex('portuguese');
 
 	// Step 2: search whatever is in the input box through our index and pull the first hit out into a variable called `result`.
 	const result = (await index.search(e.target.value)).hits[0];
@@ -148,7 +148,7 @@ const widgets = [
 const onload = () => {
 	window.searchClient = algoliasearch('3HQRD5FDNO', 'e1ceb9c8c9e6e287d14eb1ba8bc433d1');
 	window.search = instantsearch({
-		indexName: 'rhyme-dictionary',
+		indexName: 'portuguese',
 		searchClient
 	});
 	search.addWidgets(widgets);
