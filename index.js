@@ -12,13 +12,13 @@ const getSearchWordData = async e => {
 	const index = searchClient.initIndex('portuguese');
 
 	// Step 2: search whatever is in the input box through our index and pull the first hit out into a variable called `result`.
-	const result = (await index.search(e.target.value)).hits[0];
+	const result = (await index.search(e.target.value.toLowerCase())).hits[0];
 
 	// Step 3: get the element where we'll put the definitions of the inputted word
 	const ul = document.getElementById("definitions");
 
 	// Step 4: if we got a result from the search at all, and that first result matches exactly the word the user typed in, then they typed in a legitimate query, so...
-	if (!!result && result.word == e.target.value) {
+	if (!!result && result.word == e.target.value.toLowerCase()) {
 		// list out all of its definitions...
 		ul.innerHTML = "<li>" + result.definitions.join("</li><li>") + "</li>";
 
